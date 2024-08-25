@@ -395,14 +395,14 @@ def detect_sortbam(workpath,min_size,max_size,chrom):
 			for d in cigarsv:
 				tempfile.write(d[0]+'\t'+str(d[1])+'\t'+str(d[2])+'\t'+d[3]+'\t'+readname+'\t'+str(flag)+'\t'+str(mappingquality)+'\n')
 
-			if align.has_tag("SA") :
+			if align.has_tag("SA"):
 				if align.mapping_quality > 50:
 					split_num+=1
-					if chrom in [c.split(',')[0] for c in align.get_tag("SA").split(';')[:-1]]:
-						if readname not in segmentreads:
-							segmentreads[readname]=[readinfo]
-						else:
-							segmentreads[readname]+=[readinfo]
+				if chrom in [c.split(',')[0] for c in align.get_tag("SA").split(';')[:-1]]:
+					if readname not in segmentreads:
+						segmentreads[readname]=[readinfo]
+					else:
+						segmentreads[readname]+=[readinfo]
 
 	for readgroup in segmentreads:
 		if len(segmentreads[readgroup])<2 or len(segmentreads[readgroup])>20:
