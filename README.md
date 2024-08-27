@@ -54,11 +54,10 @@ Dependencies for Inspector error correction module:
 
 ## Installation
 
-To create an environment with conda (recommended):
+To create an environment with conda or mamba (recommended):
 ```
-conda create --name ins
-conda activate ins
-conda install -c bioconda inspector
+mamba create --name ins inspector
+mamba activate ins
 
 ```
 Git install after installing all the dependencies. 

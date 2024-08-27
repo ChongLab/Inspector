@@ -12,7 +12,7 @@ from datetime import datetime
 t0=time.time()
 
 parser=argparse.ArgumentParser(description='de novo assembly evaluator', usage='inspector.py [-h] -c contig.fa -r raw_reads.fastq -o output_dict/')
-parser.add_argument('--version', action='version', version='Inspector_v1.0.1')
+parser.add_argument('--version', action='version', version='Inspector_v1.3')
 parser.add_argument('-c','--contig',action='append', dest='contigfile',default=[],help='assembly contigs in FASTA format',required=True)
 parser.add_argument('-r','--read',type=str,default=False,help='sequencing reads in FASTA/FASTQ format',required=True,nargs='+')
 parser.add_argument('-d','--datatype',type=str,default='clr',help='Input read type. (clr, hifi, nanopore) [clr]')
